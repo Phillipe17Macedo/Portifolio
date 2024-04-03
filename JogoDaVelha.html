@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Jogo da Velha Personalizado</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      background-color: #011640;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+    }
+    h1 {
+      color: #fff;
+    }
+    .board {
+      display: grid;
+      grid-template-columns: repeat(3, 100px);
+      grid-gap: 5px;
+      width: 300px;
+      margin: 0 auto;
+      margin-top: 20px;
+    }
+    .cell {
+      width: 100px;
+      height: 100px;
+      font-size: 36px;
+      text-align: center;
+      border: 2px solid #fff;
+      cursor: pointer;
+      background-color: #04B2D9;
+      color: #fff;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    .cell:hover {
+      background-color: #F27C38;
+      color: #fff;
+    }
+    .playerX {
+      color: #000; /* Preto para "X" */
+    }
+    .playerO {
+      color: #000; /* Preto para "O" */
+    }
+    #result {
+      font-size: 24px;
+      margin-top: 20px;
+      color: #fff;
+    }
+    #reset-button {
+      background-color: #079DD9;
+      color: #fff;
+      font-size: 18px;
+      padding: 10px 20px;
+      margin-top: 20px;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Jogo da Velha Personalizado</h1>
+  <div class="board" id="board"></div>
+  <div id="result"></div>
+  <button id="reset-button">Reiniciar</button>
+  
+  <script>
+    const board = document.getElementById("board");
+    const result = document.getElementById("result");
+    const resetButton = document.getElementById("reset-button");
+    let currentPlayer = "X";
+    let gameBoard = ["", "", "", "", "", "", "", "", ""];
+    let gameOver = false;
+
+    function checkWinner() {
+      const winningCombinations = [
+        [0, 1, 2],
+        [3, 4, 5],
+        [6, 7, 8],
+        [0, 3, 6],
+        [1, 4, 7],
+        [2, 5, 8],
+        [0, 4, 8],
+        [2, 4, 6],
+      ];
+
+      for (const combination of winningCombinations) {
+        const [a, b, c] = combination;
+        if (gameBoard[a] && gameBoard[a] === gameBoard[b] && gameBoard[a] === gameBoard[c]) {
+          return gameBoard[a];
+        }
+      }
+
+      return gameBoard.includes("") ? null : "Empate";
+    }
+
+    function handleCellClick(index) {
+      if (gameBoard[index] || gameOver) return;
+
+      gameBoard[index] = currentPlayer;
+      renderBoard();
+      const winner = checkWinner();
+      if (winner) {
+        gameOver = true;
+        if (winner === "Empate") {
+          result.innerText = "Empate!";
+        } else {
+          result.innerText = `Jogador ${winner} venceu!`;
+        }
+        resetButton.style.display = "block"; // Mostrar botão de reinicialização
+      } else {
+        currentPlayer = currentPlayer === "X" ? "O" : "X";
+      }
+    }
+
+    function renderBoard() {
+      board.innerHTML = gameBoard.map((cell, index) => {
+        return `<div class="cell ${cell === 'X' ? 'playerX' : 'playerO'}" onclick="handleCellClick(${index})">${cell}</div>`;
+      }).join("");
+    }
+
+    function resetGame() {
+      gameBoard = ["", "", "", "", "", "", "", "", ""];
+      gameOver = false;
+      currentPlayer = "X";
+      result.innerText = "";
+      renderBoard();
+      resetButton.style.display = "none"; // Ocultar botão de reinicialização
+    }
+
+    resetButton.style.display = "none"; // Inicialmente, o botão de reinicialização está oculto
+    resetButton.addEventListener("click", resetGame);
+    renderBoard();
+  </script>
+</body>
+</html>

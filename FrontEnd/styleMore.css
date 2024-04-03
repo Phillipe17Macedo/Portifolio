@@ -1,0 +1,295 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+#body{
+    background-image: url("/img/background_1.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    justify-content: center;
+    display: flex;
+}
+.Sanduiche{
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    z-index: 2;
+}
+#header{
+    width: 100%;
+    height: 80px;
+    background-color: #1B1F26;
+    align-items: center;
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    box-shadow: 0 0 5px #F28907;
+}
+#Big-Container-Link{
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+}
+.Container-Link{
+    height: 40px;
+    border: 5px solid #F2CA52;
+    border-radius: 25px;   
+    margin: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative; 
+}
+.Login{
+    font-family: 'Roboto', sans-serif;
+    color: #F2CA52;
+    font-size: 30px;
+    margin-top: 5px;
+    margin: 8px;
+    text-decoration: none;
+    font-weight: bold;
+}
+#toggleMode{
+    position: absolute;
+    right: 60px;
+    top: 20px;
+    display: flex;
+    z-index: 2;
+}
+@media screen and (max-width:1015px){
+    #toggleMode{
+        right: 22px;
+    }
+}
+.Big-Container-SearchBar{
+    margin-top: 80px;
+    width: 100%;
+    height: 60px;
+    align-items: center;
+    display: flex;
+    position: absolute;
+    justify-content: center;
+}
+#Container-SearchBar{
+    width: 300px;
+    height: 40px;
+    margin-top: 15px;
+    background-color: #2A2A36;
+    box-shadow: 0 0 5px #F2DEA2;
+    border-radius: 25px;
+}
+#Container-SearchBar:hover{
+    box-shadow: 0 0 7px #F2CA52;
+}
+#Search{
+    width: 290px;
+    height: 40px;
+    background-color: transparent;
+    font-family: 'Roboto', sans-serif;
+    color: #F2DEA2;
+    font-size: 20px;
+    letter-spacing: 0.07em;
+    border: none;
+    border-radius: 20px;
+    padding-left: 13px;
+}
+#icon-person{
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+#icon-person-git{
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+#icon-person-linkedin{
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.Container-describe-person{
+    width: 300px;
+    height: auto;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    text-align: center;
+    margin-bottom: 10px;
+}
+#person-name{
+    color: #F2DEA2;
+    padding-top: 10px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+}
+#person-contact{
+    color: #F2DEA2;
+    padding-top: 10px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 25px;
+    text-decoration: none;
+}
+#meu-linkedin{
+    color: #F2DEA2;
+    padding-top: 10px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 25px;
+    text-decoration: none;
+}
+#meu-git{
+    color: #F2DEA2;
+    padding-top: 10px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 25px;
+    text-decoration: none;
+}
+.Text-Center{
+    color: #F2DEA2;
+    padding-top: 10px;
+    font-size: 30px;
+    font-family: 'Roboto', sans-serif;
+    margin: 10px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+}
+.Resumo-Text{
+    color: #F2DEA2;
+    padding-top: 10px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 15px;
+}
+.Container-Center-0{
+    width: 300px;
+    background-color: #131926;
+    box-shadow: 0 0 7px #F2DEA2;
+    height: 280px;
+    border-radius: 25px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    text-align: center;
+    left: 50px;
+    margin-top: 200px;
+    flex-wrap: wrap;
+}
+.Container-Center-0:hover{
+    box-shadow: 0 0 7px #F2CA52;
+}
+.Container-Center-1{
+    width: 300px;
+    background-color: #131926;
+    box-shadow: 0 0 7px #F2DEA2;
+    height: 280px;
+    border-radius: 25px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    text-align: center;
+    margin: 25%;
+    margin-top: 200px;
+    flex-wrap: wrap;
+}
+.Container-Center-1:hover{
+    box-shadow: 0 0 7px #F2CA52;
+}
+.Container-Center-2{
+    width: 300px;
+    background-color: #131926;
+    box-shadow: 0 0 7px #F2DEA2;
+    height: 280px;
+    border-radius: 25px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    text-align: center;
+    right: 50px;
+    margin-top: 200px;
+    flex-wrap: wrap;
+}
+.Container-Center-2:hover{
+    box-shadow: 0 0 7px #F2CA52;
+}
+@media screen and (max-width:1015px){
+    .Container-Center-0{
+        width: 80%;
+        margin-top: 180px;
+        justify-content: center;
+        align-items: center;
+        left: 10%;
+    }
+}
+@media screen {
+    #person-name{
+        font-size: 25px;
+    }
+}
+@media screen and (max-width:1015px){
+    .Container-Center-1{
+        width: 80%;
+        margin-top: 500px;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+    }
+}
+@media screen and (max-width:1015px){
+    .Container-Center-2{
+        width: 80%;
+        margin-top: 820px;
+        justify-content: center;
+        align-items: center;
+        right: 10%;
+    }
+}
+/* Barra de rolagem principal */
+::-webkit-scrollbar {
+    width: 10px;
+}
+  
+/* Régua da barra de rolagem */
+    ::-webkit-scrollbar-track {
+    background: #131926;
+}
+  
+/* Alça da barra de rolagem */
+    ::-webkit-scrollbar-thumb {
+    background: #F2CA52;
+    border-radius: 10px;
+}
+  
+/* Quando passa o mouse na alça da barra de rolagem */
+    ::-webkit-scrollbar-thumb:hover {
+    background: #F2DEA2;
+}
+.footer{
+    background-color: #2A2A36;
+    width: 100%;
+    height: 80px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin-top: 700px;
+    box-shadow: 0 0 5px #F28907;
+    text-align: center;
+}
+@media screen and (max-width: 1015px){
+    .footer{
+        margin-top: 1150px;
+    }
+}
+#text-footer{
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    font-size: 30px;
+    text-align: center;
+    font-weight: bold;
+    color: #F2DEA2;
+}

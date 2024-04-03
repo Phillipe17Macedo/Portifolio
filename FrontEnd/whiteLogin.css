@@ -1,0 +1,255 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro');
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Crimson', sans-serif;
+}
+body
+{
+  display: flex;
+  min-height: 100vh;
+  background-image: url("/img/background_2.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;    
+}
+.Sanduiche{
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    z-index: 2;
+}
+#header{
+    width: 100%;
+    height: 80px;
+    background-color: #ECE6D9;
+    align-items: center;
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    box-shadow: 0 0 5px #0D76F8;
+}
+#Big-Container-Link{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+}
+.Container-Link{
+    height: 50px;
+    border: 5px solid #0D35AD;
+    border-radius: 25px;   
+    margin: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative; 
+}
+#More{
+    font-family: 'Roboto', sans-serif;
+    color: #0D35AD;
+    font-size: 30px;
+    margin-top: 5px;
+    margin: 8px;
+    text-decoration: none;
+    font-weight: bold;
+}
+#toggleMode{
+    position: absolute;
+    right: 60px;
+    top: 20px;
+    display: flex;
+    z-index: 2;
+}
+@media screen and (max-width:1015px){
+    #toggleMode{
+        right: 22px;
+    }
+}
+.Big-Box{
+    width: 100%;
+    height: auto;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    position: relative;
+    margin-top: 130px;
+}
+.box
+{
+    position: relative;
+    width: 380px;
+    height: 420px;
+    background: #ECE6D9;
+    border-radius: 8px;
+    overflow: hidden;
+}
+.box::before
+{
+    content: ' ';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 380px;
+    height: 420px;
+    background: linear-gradient(0deg, transparent,
+    #0D35AD,#0D35AD);
+    transform-origin: bottom right;
+    animation: animate 6s linear infinite;
+}
+.box::after
+{
+    content: ' ';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 380px;
+    height: 420px;
+    background: linear-gradient(0deg, transparent,
+    #0D35AD,#0D35AD);
+    transform-origin: bottom right;
+    animation: animate 6s linear infinite;
+    animation-delay: -3s;
+}
+@keyframes animate
+{
+    0%
+    {
+        transform: rotate(0deg);
+    }
+    100%
+    {
+        transform: rotate(360deg);
+    }
+}
+.form 
+{
+    position: absolute;
+    inset: 2px;
+    border-radius: 8px;
+    background: #ECE6D9;
+    z-index: 10;
+    padding: 50px 40px;
+    display: flex;
+    flex-direction: column;
+}
+.form h2
+{
+    font-family: 'Roboto', sans-serif;
+    color: #0D35AD;
+    text-align: center;
+    letter-spacing: 0.1em;
+    font-weight: bold;
+    font-size: 30px;
+}
+.inputBox
+{
+    position: relative;
+    width: 300px;
+    margin-top: 35px;
+}
+.inputBox input
+{
+    position: relative;
+    width: 100%;
+    padding: 20px 10px 10px;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #ECE6D9;
+    font-size: 1em;
+    letter-spacing: 0.05em;
+    z-index: 10;
+}
+.inputBox span
+{
+    position: absolute;
+    left: 0;
+    padding: 20px 0px 10px;
+    font-size: 1em;
+    color: #0D35AD;
+    pointer-events: 0.05em;
+    transition: 0.5s;
+}
+.inputBox input:valid ~ span,
+.inputBox input:focus ~ span
+{
+    color: #0D35AD;
+    transform: translateX(0px) translateY(-34px);
+    font-size: 0.75em;
+}
+.inputBox i
+{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background: #0D35AD;
+    border-radius: 4px;
+    transition: 0.5s;
+    pointer-events: none;
+    z-index: 9;
+}
+.inputBox input:valid ~ i,
+.inputBox input:focus ~ i
+{
+    height: 44px;
+
+}
+.links
+{
+    display: flex;
+    justify-content: space-between;
+}
+.links a
+{
+    margin: 10px 0;
+    font-size: 0.75em;
+    color: #8f8f8f;
+    text-decoration: none;
+}
+.links a:hover,
+.links a :nth-child(2)
+{
+    color: #23242a;
+}
+input[type="submit"]
+{
+    border: none;
+    outline: none;
+    background: #93a9ec;
+    padding: 11px 25px;
+    width: 100px;
+    margin-top: 10px;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+}
+input[type="submit"]:active
+{
+    opacity: 0.8;
+}
+/* Barra de rolagem principal */
+::-webkit-scrollbar {
+    width: 10px;
+}
+  
+/* Régua da barra de rolagem */
+    ::-webkit-scrollbar-track {
+    background: #ECE6D9;
+}
+  
+/* Alça da barra de rolagem */
+    ::-webkit-scrollbar-thumb {
+    background: #0D35AD;
+    border-radius: 10px;
+}
+  
+/* Quando passa o mouse na alça da barra de rolagem */
+    ::-webkit-scrollbar-thumb:hover {
+    background: #0D215D;
+}
